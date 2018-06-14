@@ -25,18 +25,19 @@
   - depending on whether or not it is being touched. These can be set programmatically in Java,  -
   - but again, we wanted to avoid making things too complicated.                                 -
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<!-- TODO (10) Color the TextViews for weather data appropriately -->
-<!-- TODO (11) Color the background for today's weather data appropriately -->
-<!-- TODO (12) Replace dimension values with @dimen resources -->
-<!-- TODO (13) Use sans-serif-light font family for the temperature TextViews -->
+<!-- TODO (COMPLETE) (10) Color the TextViews for weather data appropriately -->
+<!-- TODO (COMPLETE) (11) Color the background for today's weather data appropriately -->
+<!-- TODO (COMPLETE) (12) Replace dimension values with @dimen resources -->
+<!-- TODO (COMPLETE) (13) Use sans-serif-light font family for the temperature TextViews -->
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="16dp"
-    android:paddingTop="16dp">
+    android:background="@color/colorPrimary"
+    android:paddingBottom="@dimen/today_forecast_list_item_vertical_padding"
+    android:paddingTop="@dimen/today_forecast_list_item_vertical_padding">
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      - This Guideline divides the screen into a left half and a right half and is used to        -
@@ -60,12 +61,15 @@
      - particular issue won't break the app, but you should note that this attribute will be     -
      - ignored on devices that run an Android version less than 16.                              -
      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--android:fontFamily instead of androind:fontFamily again - James-->
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/weather_icon"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -90,6 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintLeft_toLeftOf="@+id/weather_icon"
@@ -106,11 +111,14 @@
      - particular issue won't break the app, but you should note that this attribute will be     -
      - ignored on devices that run an Android version less than 16.                              -
      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--android:fontFamily instead of android:fontFamily-->
     <TextView
         android:id="@+id/high_temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="72sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/weather_icon"
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintLeft_toLeftOf="@+id/horizontal_middle"
@@ -127,11 +135,14 @@
      - particular issue won't break the app, but you should note that this attribute will be     -
      - ignored on devices that run an Android version less than 16.                              -
      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!--android:fontFamily instead of android:fontFamily - James-->
     <TextView
         android:id="@+id/low_temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="36sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/white"
         app:layout_constraintBaseline_toBaselineOf="@+id/weather_description"
         app:layout_constraintLeft_toLeftOf="@+id/high_temperature"
         app:layout_constraintRight_toRightOf="@+id/high_temperature"
